@@ -3,15 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Practice</title>
+    <title>DOM Practice - Carlos Adenge</title>
     <style>
-        .highlight { background-color: yellow; }
-        .container { padding: 20px; border: 1px solid #ccc; }
-        .hidden { display: none; }
-        .accent { color: #8e2a5b; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 1.5rem;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        .container {
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+            margin-top: 1rem;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        article {
+            margin-bottom: 1.5rem;
+        }
+
+        article h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .content {
+            margin-bottom: 0.75rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 400px;
+        }
+
+        input {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 0.6rem 1.2rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .practice-note {
+            background: #e0f2fe;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #2563eb;
+        }
     </style>
 </head>
 <body>
+
+    <div class="practice-note">
+        <strong>Instructions:</strong> Open the Console (F12) to see the results of the DOM practice exercises in <code>dom.js</code>.
+    </div>
+
     <header id="main-header">
         <h1>DOM Practice</h1>
         <nav>
@@ -22,36 +132,28 @@
             </ul>
         </nav>
     </header>
-
+    
     <main class="container">
-        <article data-id="42" data-category="tech">
+        <article>
             <h2 class="title">Article Title</h2>
             <p class="content">This is the first paragraph.</p>
             <p class="content">This is the second paragraph.</p>
         </article>
-
+        
         <section>
             <h2>Form Section</h2>
             <form id="contact-form">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Amina">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="name@gmail.com">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="email" id="email" name="email" placeholder="Email">
                 <button type="submit">Submit</button>
             </form>
         </section>
-
-        <section id="injection-demo">
-            <h2>Injection demo</h2>
-            <div id="unsafe"></div>
-            <div id="safe"></div>
-        </section>
     </main>
-
+    
     <footer>
-        <p>&copy; 2026</p>
+        <p>&copy; 2026 Carlos Adenge – Week 5 DOM Practice</p>
     </footer>
-
+    
     <script src="dom.js"></script>
 </body>
 </html>
