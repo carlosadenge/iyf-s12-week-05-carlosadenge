@@ -7,7 +7,7 @@
 [View Live Site](https://carlosadenge.github.io/iyf-s12-week-05-carlosadenge)
 
 ## About This Project
-This is my Week 5 project for the IYF Weekend Academy Season 12.  
+This is my Week 5 project for the IYF Wecan Academy Season 12.  
 I built a fully interactive To-Do List using pure JavaScript and DOM manipulation.
 
 ## Features
