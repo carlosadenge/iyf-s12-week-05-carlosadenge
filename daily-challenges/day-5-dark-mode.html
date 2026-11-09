@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Dark Mode Toggle</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark {
+            background-color: #1e293b;
+            color: #f1f5f9;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background: #2563eb;
+            color: white;
+        }
+
+        body.dark button {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dark Mode Toggle</h1>
+    <p>Click the button below to switch between light and dark mode.</p>
+
+    <button id="toggle-btn">Toggle Dark Mode</button>
+
+    <script>
+        const toggleBtn = document.getElementById("toggle-btn");
+        const body = document.body;
+
+        // Load saved preference
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark");
+        }
+
+        toggleBtn.addEventListener("click", function () {
+            body.classList.toggle("dark");
+
+            // Save preference
+            if (body.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+</html>
