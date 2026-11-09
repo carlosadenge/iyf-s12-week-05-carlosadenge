@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Image Remover</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; text-align: center; }
+        img { width: 150px; height: 100px; object-fit: cover; margin: 0.5rem; border-radius: 8px; }
+        button { padding: 0.6rem 1.2rem; margin: 0.5rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Image Remover</h1>
+
+    <div id="images">
+        <img src="https://placehold.co/150x100" alt="Image 1">
+        <img src="https://placehold.co/150x100/blue" alt="Image 2">
+        <img src="https://placehold.co/150x100/green" alt="Image 3">
+        <img src="https://placehold.co/150x100/orange" alt="Image 4">
+    </div>
+
+    <button id="remove-btn">Remove All Images</button>
+    <button id="toggle-btn">Toggle Hide/Show</button>
+
+    <script>
+        const removeBtn = document.getElementById("remove-btn");
+        const toggleBtn = document.getElementById("toggle-btn");
+        const imagesDiv = document.getElementById("images");
+
+        // Remove all images
+        removeBtn.addEventListener("click", function () {
+            const images = document.querySelectorAll("img");
+            images.forEach(img => img.remove());
+        });
+
+        // Bonus: Toggle hide/show
+        let hidden = false;
+        toggleBtn.addEventListener("click", function () {
+            hidden = !hidden;
+            imagesDiv.style.display = hidden ? "none" : "block";
+            toggleBtn.textContent = hidden ? "Show Images" : "Toggle Hide/Show";
+        });
+    </script>
+</body>
+</html>
