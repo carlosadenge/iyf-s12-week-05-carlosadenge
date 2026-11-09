@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Dynamic Element Creator</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; }
+        button { padding: 0.6rem 1.2rem; margin-bottom: 1rem; cursor: pointer; }
+        .item { display: flex; align-items: center; gap: 1rem; margin: 0.5rem 0; }
+        .delete-btn { background: #ef4444; color: white; border: none; padding: 0.3rem 0.6rem; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Paragraph Creator</h1>
+    <button id="add-btn">Add Paragraph</button>
+    <div id="container"></div>
+
+    <script>
+        const addBtn = document.getElementById("add-btn");
+        const container = document.getElementById("container");
+        let count = 0;
+
+        addBtn.addEventListener("click", function () {
+            count++;
+            const div = document.createElement("div");
+            div.className = "item";
+
+            const p = document.createElement("p");
+            p.textContent = `Paragraph number ${count}`;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.className = "delete-btn";
+            deleteBtn.textContent = "Delete";
+
+            deleteBtn.addEventListener("click", function () {
+                div.remove();
+            });
+
+            div.appendChild(p);
+            div.appendChild(deleteBtn);
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
